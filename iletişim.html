@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>İletişime Geçin</title>
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #8f6748;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url(smoke-antique-notebook-ink-pen.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+      
+
+        h2 {
+            text-align: center;
+            color: #141313;
+            margin-top: 0;
+            margin-bottom: 25px;
+            
+        }
+
+        
+        .form-icerik {
+            display: flex; 
+            gap: 20px;     
+        }
+
+         
+        .sol-kolon {
+            flex: 1;      
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px;     
+        }
+
+        .sag-kolon {
+            flex: 1;       
+        }
+
+    
+        input[type="text"], 
+        input[type="email"] {
+            padding: 20px;
+            border: 1px solid #8c674a;
+            border-radius: 15px;
+            font-size: 15px;
+            margin-bottom: 20px;
+            margin-right: 320px;
+            color: #000000;
+            background-color: #856543;
+        }
+
+        
+        textarea {
+            width: 100%;    
+            height: 100%;   
+            padding: 20px;
+            border: 1px solid #8c6649;
+            border-radius: 15px;
+            font-size: 15px;
+            background-color: #8d6d4a;
+            resize: none;   
+            box-sizing: border-box; 
+            margin-right: 100px;
+            color: #000000;
+        }
+
+        
+        .buton-alani {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 12px 40px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #000000;
+        }
+
+        ::placeholder{
+            color: #000000;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="form-kutusu">
+        <h2>Bize Ulaşın</h2>
+        
+        <form action="indexproje.html" method="POST">
+            
+            <div class="form-icerik">
+                
+                <div class="sol-kolon">
+                    <input type="text" placeholder="İsim">
+                    <input type="text" placeholder="Soyisim">
+                    <input type="email" placeholder="E-Posta Adresi">
+                </div>
+
+                <div class="sag-kolon">
+                    <textarea placeholder="Mesajınız veya Açıklamanız..."></textarea>
+                </div>
+
+            </div>
+
+            <div class="buton-alani">
+                <button type="submit">Gönder</button>
+            </div> 
+
+
+        </form>
+    </div>
+
+</body>
+</html>
