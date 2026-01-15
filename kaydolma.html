@@ -15,7 +15,7 @@
                 margin: 0;
                 background-color: gray;
                 font-family: Arial, sans-serif;
-                background-image: url(e34e5e7ff111c036541f1efa3161b137.jpg);
+                background-image: url(galeri/e34e5e7ff111c036541f1efa3161b137.jpg);
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: cover;
@@ -93,7 +93,7 @@
             <h1>Kayıt olun</h1>
 
       
-        <form action="indexproje.html" method="POST"> <table>
+        <form action="girişyap.html" onsubmit="return kontrolEt()"> <table>
                 <tr>
                     <td>İsim giriniz:</td>
                     <td><input type="text" placeholder="İsim giriniz"></td>
@@ -132,11 +132,60 @@
         </form>
     
     </div> 
-        
-        
     
-    
+    <script>
+    function kontrolEt(){
+        
+        const tumInputlar = document.querySelectorAll('input[type="text"]');
+        
+        const isim = tumInputlar[0].value.trim();   
+        const soyad = tumInputlar[1].value.trim();   
+        const KullaniciAdi = tumInputlar[2].value.trim(); 
+        const sifre = document.querySelector('input[type="password"]').value.trim();
 
-    
+        const harfDeseni = /^[a-zA-ZçÇğĞıİöÖşŞüÜ\s]+$/;
+
+        
+        if(isim === "" || soyad === "" || KullaniciAdi === "" || sifre === "" ){
+            alert("Lütfen bilgileri doldurunuz!");
+            return false;
+        }
+
+       
+        if(isim.length > 25){
+            alert("İsim 25 karakterden uzun olamaz!");
+            return false;
+        }
+        if(!harfDeseni.test(isim)){
+            alert("İsminizi özel karakter ve sayı kullanmadan giriniz!");
+            return false;
+        }
+
+       
+        if(soyad.length > 25){
+            alert("Soyad 25 karakterden uzun olamaz!");
+            return false;
+        }
+        if(!harfDeseni.test(soyad)){
+            alert("Soyadınızı özel karakter ve sayı kullanmadan giriniz!");
+            return false;
+        }
+
+        
+        if(KullaniciAdi.length > 25){
+            alert("Kullanıcı adı 25 karakterden uzun olamaz!");
+            return false;
+        }
+
+        
+        if(sifre.length < 6 || sifre.length > 30){
+            alert("Şifreniz 6 ile 30 karakter arasında olmalıdır!");
+            return false;
+        }
+
+        alert("Kaydınız tamamlanıyor...");
+        return true;
+    }
+    </script>
     </body>
 </html>

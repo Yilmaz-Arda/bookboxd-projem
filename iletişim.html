@@ -13,7 +13,7 @@
             margin: 0;
             background-color: #8f6748;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url(smoke-antique-notebook-ink-pen.jpg);
+            background-image: url(galeri/a1.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -91,6 +91,8 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background 0.3s;
+
+
         }
 
         button:hover {
@@ -108,18 +110,17 @@
     <div class="form-kutusu">
         <h2>Bize Ulaşın</h2>
         
-        <form action="indexproje.html" method="POST">
-            
+        <form action="index.html" onsubmit="return kontrolEt()">
             <div class="form-icerik">
                 
                 <div class="sol-kolon">
-                    <input type="text" placeholder="İsim">
-                    <input type="text" placeholder="Soyisim">
-                    <input type="email" placeholder="E-Posta Adresi">
+                    <input type="text" id="isim" placeholder="İsim">
+                    <input type="text" id ="soyisim" placeholder="Soyisim">
+                    <input type="email" id ="eposta" placeholder="E-Posta Adresi">
                 </div>
 
                 <div class="sag-kolon">
-                    <textarea placeholder="Mesajınız veya Açıklamanız..."></textarea>
+                    <textarea id="mesaj" placeholder="Mesajınız veya Açıklamanız..."></textarea>
                 </div>
 
             </div>
@@ -131,6 +132,24 @@
 
         </form>
     </div>
+    <script>
 
+        function kontrolEt(){
+            const isim = document.getElementById('isim').value.trim();
+            const soyisim = document.getElementById('soyisim').value.trim();
+            const mesaj = document.getElementById('mesaj').value.trim();
+
+            if(isim === "" || soyisim === "" || mesaj === ""){
+                alert("Lütfen isim soyisim ve mesaj alanınlarını eksiksiz doldurunuz!")
+                return false;
+            }
+        
+            alert("Mesajınız gönderildi")
+            return true;
+
+
+
+        }
+    </script>
 </body>
 </html>

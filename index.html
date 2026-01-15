@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        
         :root {
             --bg-color: #14181c;      
             --header-bg: #2c3440;      
@@ -27,7 +26,6 @@
         a { text-decoration: none; color: inherit; transition: 0.2s; }
         a:hover { color: var(--text-white); }
 
-        
         header {
             background-color: var(--header-bg);
             padding: 15px 0;
@@ -57,10 +55,6 @@
             text-transform: uppercase;
         }
 
-        .btn-log { color: var(--accent-green) !important; }
-        .btn-reg { color: var(--accent-orange) !important; }
-
-        
         main {
             width: 90%;
             max-width: 950px;
@@ -105,7 +99,6 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.5);
         }
 
-        
         .book-overlay {
             position: absolute;
             bottom: 0;
@@ -120,17 +113,11 @@
             text-align: center;
         }
 
-        .book-card:hover .book-overlay {
-            opacity: 1; 
-        }
-
+        .book-card:hover .book-overlay { opacity: 1; }
         .stars { color: var(--accent-green); margin-top: 5px; }
 
         
-        .review-section {
-            margin-top: 60px;
-        }
-
+        .review-section { margin-top: 60px; }
         .review-list {
             display: flex;
             flex-direction: column;
@@ -146,92 +133,68 @@
             background: #1c2128;
             padding: 15px;
             border-radius: 4px;
+            align-items: flex-start;
         }
 
         .reviewer-avatar {
-           width: 50px;
-           height: 50px;
-           border-radius: 50%;
-           background-size: cover;
-           background-color: #fff;
-           background-position: center;
-           flex-shrink: 0; 
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0; 
+            cursor: zoom-in;
+            border: 2px solid transparent;
+            transition: 0.3s;
         }
+        .reviewer-avatar:hover { border-color: var(--accent-green); }
 
-
-
-        .review-content h3 {
-            margin: 0 0 5px 0;
-            color: var(--text-white);
-            font-size: 16px;
-        }
-        
-        .review-content{
-            flex: 1;
-            min-width: 0;
-            word-wrap: break-word;
-        }
-
+        .review-content { flex: 1; min-width: 0; word-wrap: break-word; }
+        .review-content h3 { margin: 0 0 5px 0; color: var(--text-white); font-size: 16px; }
         .review-text { font-size: 12px; line-height: 1.4; }
 
-        
-    footer {
-    background-color: var(--header-bg); 
-    padding: 40px 0;
-    margin-top: 60px; 
-    border-top: 1px solid #344; 
-    text-align: center;
-    color: var(--text-color);
-    }
+       
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox:target { display: flex; }
+        .lightbox-content {
+            width: 350px;
+            height: 350px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            border: 4px solid var(--accent-green);
+        }
+        .lightbox-close {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            cursor: zoom-out;
+        }
 
-    .footer-content {
-    width: 90%;
-    max-width: 950px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    }
-
-    .social-links {
-    display: flex;
-    gap: 20px;
-    }
-
-    .social-links a {
-    font-size: 20px;
-    color: var(--text-color);
-    transition: 0.3s;
-    background: #1c2128;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%; 
-    }
-
-
-    .social-links a:hover {
-    background-color: var(--accent-green);
-    color: #fff;
-    transform: translateY(-3px); 
-    }
-
-    .copyright {
-    font-size: 13px;
-    opacity: 0.7;
-    }
-
-
+        footer {
+            background-color: var(--header-bg); 
+            padding: 40px 0;
+            margin-top: 60px; 
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="navbar">
-            <a href="indexproje.html" class="logo"><i class="fas fa-book-open"></i> BOOKBOXD</a>
+            <a href="index.html" class="logo"><i class="fas fa-book-open"></i> BOOKBOXD</a>
             <div class="nav-links">
                 <a href="girişyap.html">Giriş Yap</a>
                 <a href="kaydolma.html">Kaydol</a>
@@ -242,59 +205,38 @@
     </header>
 
     <main>
-        
-        
         <section>
-            <h2>Haftanın Popüler Kitapları</h2>
+            <h2><a href="https://www.amazon.com.tr/s?i=stripbooks&bbn=27913399031&rh=n%3A27913399031%2Cp_85%3A21345931031&_encoding=UTF8&pf_rd_p=e38113cd-614e-4f3f-bffa-a86e5037b8f8&pf_rd_r=BPQQG1R1GRSWRJPSS1CM&ref=cct_cg_brand50_1a1">
+                Haftanın Popüler Kitapları
+            </a>
+               
+
+
+            </h2>
             <div class="book-grid">
                 <div class="book-card">
                     <img src="https://m.media-amazon.com/images/I/81gepf1eMqL._AC_UF1000,1000_QL80_.jpg" alt="To Kill a Mockingbird" class="book-cover">
-                    <div class="book-overlay">
-                        <div>Bülbülü Öldürmek</div>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="book-overlay"><div>Bülbülü Öldürmek</div><div class="stars">★★★★★</div></div>
                 </div>
-
                 <div class="book-card">
                     <img src="https://m.media-amazon.com/images/I/71kxa1-0mfL._AC_UF1000,1000_QL80_.jpg" alt="1984" class="book-cover">
-                    <div class="book-overlay">
-                        <div>1984</div>
-                        <div class="stars">★★★★☆</div>
-                    </div>
+                    <div class="book-overlay"><div>1984</div><div class="stars">★★★★☆</div></div>
                 </div>
-
                 <div class="book-card">
                     <img src="https://m.media-amazon.com/images/I/91b0C2YNSrL._AC_UF1000,1000_QL80_.jpg" alt="Harry Potter" class="book-cover">
-                    <div class="book-overlay">
-                        <div>Harry Potter</div>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="book-overlay"><div>Harry Potter</div><div class="stars">★★★★★</div></div>
                 </div>
-                
-                 <div class="book-card">
+                <div class="book-card">
                     <img src="a2.webp" alt="Dune" class="book-cover">
-                    <div class="book-overlay">
-                        <div>Dune</div>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="book-overlay"><div>Dune</div><div class="stars">★★★★★</div></div>
                 </div>
-
                 <div class="book-card">
                     <img src="a3.jpg" alt="Simyacı" class="book-cover">
-                    <div class="book-overlay">
-                        <div>Simyacı</div>
-                        <div class="stars">★★★☆☆</div>
-                    </div>
+                    <div class="book-overlay"><div>Simyacı</div><div class="stars">★★★☆☆</div></div>
                 </div>
-            
-        
-
                 <div class="book-card">
                     <img src="91Qd1eeMRlL._SY466_.jpg" alt="İnsanlığımı Yitirirken" class="book-cover">
-                    <div class="book-overlay">
-                        <div>İnsanlığımı Yitirirken</div>
-                        <div class="stars">★★★★☆</div>
-                    </div>
+                    <div class="book-overlay"><div>İnsanlığımı Yitirirken</div><div class="stars">★★★★☆</div></div>
                 </div>
             </div>
         </section>
@@ -304,124 +246,107 @@
             <div class="review-list">
 
                 <div class="review-item">
-                    <div class="reviewer-avatar"></div> 
+                    <a href="#img1"><div class="reviewer-avatar"></div></a>
+                    <div class="lightbox" id="img1"><a href="#_" class="lightbox-close"></a><div class="lightbox-content"></div></div>
                     <div class="review-content">
-                        <h3>Suç ve Ceza <span style="color:var(--text-color); font-size:12px;">– Ahmet tarafından Bugün incelendi</span></h3>
+                        <h3>Suç ve Ceza <span style="color:var(--text-color); font-size:12px;">– Ahmet tarafından Bugün</span></h3>
                         <div class="stars">★★★★★</div>
-                        <p class="review-text">Raskolnikov'un psikolojisi inanılmazdı. Kesinlikle okunması gereken bir başyapıt.</p>
+                        <p class="review-text">Raskolnikov'un psikolojisi inanılmazdı.</p>
                     </div>
                 </div>
 
                 <div class="review-item">
-                    <div class="reviewer-avatar"></div>
+                    <a href="#img2"><div class="reviewer-avatar"></div></a>
+                    <div class="lightbox" id="img2"><a href="#_" class="lightbox-close"></a><div class="lightbox-content"></div></div>
                     <div class="review-content">
-                        <h3>Dönüşüm <span style="color:var(--text-color); font-size:12px;">– Elif tarafından 2h önce incelendi</span></h3>
+                        <h3>Dönüşüm <span style="color:var(--text-color); font-size:12px;">– Elif tarafından 2h önce</span></h3>
                         <div class="stars">★★★★☆</div>
-                        <p class="review-text">Kısa ama çarpıcı. Gregor Samsa'nın çaresizliği çok etkileyiciydi.</p>
+                        <p class="review-text">Gregor Samsa'nın çaresizliği çok etkileyiciydi.</p>
                     </div>
                 </div>
 
                 <div class="review-item">
-                    <div class="reviewer-avatar"></div>
+                    <a href="#img3"><div class="reviewer-avatar"></div></a>
+                    <div class="lightbox" id="img3"><a href="#_" class="lightbox-close"></a><div class="lightbox-content"></div></div>
                     <div class="review-content">
-                        <h3>Yer Altından Notlar <span style="color:var(--text-color); font-size:12px;">– Yılmaz tarafından 1h önce incelendi</span></h3>
+                        <h3>Yer Altından Notlar <span style="color:var(--text-color); font-size:12px;">– Yılmaz tarafından 1h önce</span></h3>
                         <div class="stars">★★★★★</div>
-                        <p class="review-text">Başka bir boyuttan gelen bir dili okuyormuşsunuz gibi ağır ancak kafanızın içindekileri tekrarlıyormuşsunuz gibi gerçek.</p>
+                        <p class="review-text">Kafanızın içindekileri tekrarlıyormuşsunuz gibi gerçek.</p>
                     </div>
                 </div>
 
                 <div class="review-item">
-                    <div class="reviewer-avatar"></div>
+                    <a href="#img4"><div class="reviewer-avatar"></div></a>
+                    <div class="lightbox" id="img4"><a href="#_" class="lightbox-close"></a><div class="lightbox-content"></div></div>
                     <div class="review-content">
-                        <h3>Satranç <span style="color: var(--text-color); font-size: 12px;">- Arda tarafından 2 gün önce incelendi</span></h3>
+                        <h3>Satranç <span style="color:var(--text-color); font-size:12px;">– Arda tarafından 2 gün önce</span></h3>
                         <div class="stars">★★★★★</div>
-                        <p class="review-text">Yalnızlığın insan ruhuna verdiği zararı ve travmaların ciddiyeti çok iyi işlenmiş.</p>
+                        <p class="review-text">Yalnızlığın insan ruhuna verdiği zararı çok iyi işlenmiş.</p>
                     </div>
-
                 </div>
-                
+
                 <div class="review-item">
-                    <div class="reviewer-avatar"></div>
+                    <a href="#img5"><div class="reviewer-avatar"></div></a>
+                    <div class="lightbox" id="img5"><a href="#_" class="lightbox-close"></a><div class="lightbox-content"></div></div>
                     <div class="review-content">
-                        <h3>Kumarbaz <span style="color: var(--text-color); font-size: 12px;">- Azra tarafından Bugün incelendi</span></h3>
+                        <h3>Kumarbaz <span style="color:var(--text-color); font-size:12px;">– Azra tarafından Bugün</span></h3>
                         <div class="stars">★★★★★</div>
-                        <p class="review-text">Dostoyevski bağımlılıkların insanı çizgilerinden ne kadar çıkarabileceğini ve duyguların insanı nasıl kontrol ettiğini şahane bir şekilde anlatıyor.</p>
+                        <p class="review-text">Dostoyevski duyguların insanı nasıl kontrol ettiğini şahane anlatıyor.</p>
                     </div>
-
                 </div>
 
                 <div class="review-item">
-                    <div class="reviewer-avatar"></div>
+                    <a href="#img6"><div class="reviewer-avatar"></div></a>
+                    <div class="lightbox" id="img6"><a href="#_" class="lightbox-close"></a><div class="lightbox-content"></div></div>
                     <div class="review-content">
-                        <h3> Doktor Ox'un Deneyi<span style="color: var(--text-color); font-size: 12px;">- Mert tarafından Dün incelendi</span></h3>
-                        <div class="stars">★★★</div>
-                        <p class="review-text">Göndermeleri hikayeye güzel gizliyor ve vermek istediği mesaj çok iyi ancak herkesi tutmayabilir,pek sürükleyici bulmadım.</p>
+                        <h3>Doktor Ox'un Deneyi <span style="color:var(--text-color); font-size:12px;">– Mert tarafından Dün</span></h3>
+                        <div class="stars">★★★☆☆</div>
+                        <p class="review-text">Vermek istediği mesaj çok iyi ancak pek sürükleyici bulmadım.</p>
                     </div>
-
                 </div>
-                
+
+            </div>
         </section>
+    </main>
 
-    </main> <footer>
-    <div class="footer-content">
-        <div class="social-links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/Yilmaz-Arda/bookboxd-projem"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/Yilmaz-Arda/bookboxd-projem"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="copyright">&copy; 2024 Bookboxd. Tüm hakları saklıdır. <br> Kitaplar, hayatın provasıdır.</div>
         </div>
-
-        <div class="copyright">
-            &copy; 2024 Bookboxd. Tüm hakları saklıdır. <br>
-            Kitaplar, hayatın provasıdır.
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script>
         const avatarlar = [
-            "avatar1.jpg",
-            "avatar2.jpg",
-            "avatar3.jpg",
-            "avatar4.jpg",
-            "avatar5.jpg",
-            "avatar6.jpg",
-            "avatar7.jpg",
-            "avatar8.jpg",
-            "avatar9.jpg",
-            "avatar10.jpg",
-            "avatar11.jpg",
-            "avatar12.jpg"
+            "avatar1.jpg", "avatar2.jpg", "avatar3.jpg", "avatar4.jpg",
+            "avatar5.jpg", "avatar6.jpg", "avatar7.jpg", "avatar8.jpg",
+            "avatar9.jpg", "avatar10.jpg", "avatar11.jpg", "avatar12.jpg"
         ];
 
-
-        const kutular = document.querySelectorAll(".reviewer-avatar")
-
+        const kutular = document.querySelectorAll(".reviewer-avatar");
         avatarlar.sort(() => Math.random() - 0.5);
 
-
-        kutular.forEach (function(avatarrandom, siraNumarasi){
-
+        kutular.forEach(function(avatarDiv, siraNumarasi){
             let hangiResim = siraNumarasi % avatarlar.length; 
+            let resimYolu = `url('${avatarlar[hangiResim]}')`;
 
+            avatarDiv.style.backgroundImage = resimYolu;
 
-            avatarrandom.style.backgroundImage = `url('${avatarlar[hangiResim]}')`
-            avatarrandom.style.backgroundSize = "cover";
-            avatarrandom.style.backgroundPosition = "center";
-        
-        });      
-
-
-
-        
-
+            
+            let parentItem = avatarDiv.closest('.review-item');
+            let büyükResim = parentItem.querySelector('.lightbox-content');
+            if(büyükResim) {
+                büyükResim.style.backgroundImage = resimYolu;
+            }
+        });
     </script>
-
-
-
 </body>
 </html>
-
 
 
 

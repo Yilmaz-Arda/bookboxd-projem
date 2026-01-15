@@ -15,7 +15,7 @@
                 margin: 0;
                 background-color: gray;
                 font-family: Arial, sans-serif;
-                background-image: url(e34e5e7ff111c036541f1efa3161b137.jpg);
+                background-image: url(galeri/e34e5e7ff111c036541f1efa3161b137.jpg);
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: cover;
@@ -93,7 +93,7 @@
             <h1>Giriş Yapın</h1>
 
       
-        <form action="indexproje.html" method="POST"> <table>
+        <form action="index.html" onsubmit="return kontrolEt()"> <table>
                 <tr>
                     <td>Kullanıcı adı giriniz:</td>
                     <td><input type="text" placeholder="Kullanıcı adı giriniz"></td>
@@ -118,12 +118,41 @@
         </form>
     
     </div> 
-        
-        
     
-    
+    <script>
+        function kontrolEt(){
+            const KullaniciAdi = document.querySelector('input[type="text"]').value.trim();
+            const sifre = document.querySelector('input[type="password"]').value.trim();
+            
 
-    
+            if (KullaniciAdi === "" || sifre === ""){
+                alert("Kullanıcı adı ile şifre boş bırakılamaz!");
+                return false;
+            }
+
+            if (KullaniciAdi.length > 25){
+                alert("Kullanıcı adı 25 karakterden fazla olamaz!")
+                return false;
+            }
+
+            if( sifre.length > 30 || sifre.length < 6){
+                alert("Şifreniz 6 karakter ile 30 karakter arasında olmalıdır!")
+                return false;
+            }
+
+          
+            alert("Giriş Yapılıyor...")
+                return true;
+
+
+        }
+
+
+
+
+
+
+    </script>
     </body>
 </html>
 
